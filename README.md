@@ -15,7 +15,7 @@
 This module is capable of managing multiple Redis instances, as well as Redis Sentinel.
 
 Managing Redis though puppet is pretty hard since Redis, especially if managed via Sentinel, 
-tends to rewrite is configuration, whenever a change in the cluster happens.
+tends to rewrite its configuration, whenever a change in the cluster happens.
 
 These changes then may get overwritten by Puppet in the next run, rendering the Redis cluster broken.
 
