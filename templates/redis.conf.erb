@@ -1,0 +1,6 @@
+dir /var/lib/redis/redis_<%= @title %>
+logfile /var/log/redis/redis_<%= @title %>.log
+pidfile /var/run/redis/redis_<%= @title %>.pid
+maxmemory <%= @maxmemory %>
+
+

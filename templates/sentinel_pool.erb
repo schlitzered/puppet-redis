@@ -1,0 +1,10 @@
+[<%= @title %>:pool]
+members = <%= @members.join(',') %>
+auth_pass = <%= @auth_pass %>
+quorum = <%= @quorum %>
+down_after_milliseconds = <%= @down_after_milliseconds %>
+parallel_syncs = <%= @parallel_syncs %>
+failover_timeout = <%= @failover_timeout %>
+notification_script = <%= @notification_script %>
+client_reconfig_script = <%= @client_reconfig_script %>
+
