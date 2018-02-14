@@ -22,7 +22,7 @@ These changes then may get overwritten by Puppet in the next run, rendering the 
 This module takes a different approach in how the config is managed.
 
 Redis has two types of configs options, the first one require a service restart, like changing the port.
-The other options are changeable via runtime, the the redis protocol.
+The other options are changeable via runtime, via the redis protocol.
 
 The "restart required" options are implemented via the file_line resource, and are executed before
 the redis instance starts, or will trigger are redis restart.
@@ -46,7 +46,7 @@ After the bootstrapping is done, the sentinels will take care of the replica set
 
 ### What redis affects
 The module brings it own SystemD unit files for both redis and redis sentinel.
-The normal redis instances will be switched of and disabled.
+The normal redis instances will be switched off and disabled.
 
 ### Setup Requirements 
 
@@ -109,7 +109,7 @@ redis::instances:
 
 ```
 
-It is expected that you may need multiple puppet runs for the cluster to be correctly be setup.
+It is expected that you may need multiple puppet runs for the cluster to be correctly setup.
 Since puppet will reports errors if remote redis instances are not yet ready.
 
 ## Usage
@@ -118,6 +118,8 @@ The module has been build to be completely managed via hiera.
 You only need to include the main redis class somewhere.
 
 ## Reference
+
+please check the classes and defines for options that can be set through hiera!
 
 ### Classes
 
