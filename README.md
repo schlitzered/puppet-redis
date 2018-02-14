@@ -13,6 +13,7 @@
 ## Description
 
 This module is capable of managing multiple Redis instances, as well as Redis Sentinel.
+
 Managing Redis though puppet is pretty hard since Redis, especially if managed via Sentinel, 
 tends to rewrite is configuration, whenever a change in the cluster happens.
 
