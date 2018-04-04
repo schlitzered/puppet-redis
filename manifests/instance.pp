@@ -120,9 +120,23 @@ define redis::instance (
       multiple => true,
       notify   => Service["redis@${title}"]
     }
+    file_line { "redis_${title}_masterauth":
+      line     => "masterauth \"${masterauth}\"",
+      match    => '^masterauth.*',
+      path     => "/etc/redis/redis_${title}.conf",
+      multiple => true,
+      notify   => Service["redis@${title}"]
+    }
     file_line { "redis_${title}_port":
       line     => "port ${port}",
       match    => '^port.*',
+      path     => "/etc/redis/redis_${title}.conf",
+      multiple => true,
+      notify   => Service["redis@${title}"]
+    }
+    file_line { "redis_${title}_requirepass":
+      line     => "requirepass \"${requirepass}\"",
+      match    => '^requirepass.*',
       path     => "/etc/redis/redis_${title}.conf",
       multiple => true,
       notify   => Service["redis@${title}"]
@@ -250,13 +264,6 @@ define redis::instance (
       port    => $port,
       require => Service["redis@${title}"],
     }
-    redis::option { "redis_${title}_masterauth":
-      option  => 'masterauth',
-      value   => $masterauth,
-      auth    => $requirepass,
-      port    => $port,
-      require => Service["redis@${title}"],
-    }
     redis::option { "redis_${title}_slave_serve_stale_data":
       option  => 'slave-serve-stale-data',
       value   => $slave_serve_stale_data,
@@ -351,13 +358,6 @@ define redis::instance (
     redis::option { "redis_${title}_slave_announce_port":
       option  => 'slave-announce-port',
       value   => $slave_announce_port,
-      auth    => $requirepass,
-      port    => $port,
-      require => Service["redis@${title}"],
-    }
-    redis::option { "redis_${title}_requirepass":
-      option  => 'requirepass',
-      value   => $requirepass,
       auth    => $requirepass,
       port    => $port,
       require => Service["redis@${title}"],
