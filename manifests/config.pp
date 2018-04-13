@@ -59,6 +59,10 @@ class redis::config inherits redis {
     mode   => '0555',
     source => 'puppet:///modules/redis/redis_sentinel_cleanup.py'
   }
+  file { '/usr/lib/tmpfiles.d/redis.conf':
+    ensure  => $_dir_ensure,
+    source => 'puppet:///modules/redis/tmpfiles.d.redis.conf'
+  }
   file { '/var/log/redis/':
     ensure => $_dir_ensure,
     group  => 'redis',

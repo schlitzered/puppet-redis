@@ -1,6 +1,6 @@
 {
   "name": "schlitzered-redis",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Stephan Schultchen",
   "summary": "Manage Redis Sentinel, as well as multiple Redis Instances",
   "license": "MIT",
@@ -8,8 +8,9 @@
   "project_page": "https://github.com/schlitzered/puppet-redis",
   "issues_url": "https://github.com/schlitzered/puppet-redis/issues",
   "dependencies": [
-
+  
   ],
+  "data_provider": null,
   "operatingsystem_support": [
     {
       "operatingsystem": "CentOS",
