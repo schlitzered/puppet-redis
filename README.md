@@ -44,6 +44,11 @@ After the bootstrapping is done, the sentinels will take care of the replica set
 
 ## Setup
 
+### Remarks
+
+This module uses python helper scripts for orchestration. these scripts rely on python3 to be available.
+you have to take care to install python3 somewhere in your manifests.
+
 ### What redis affects
 The module brings it own SystemD unit files for both redis and redis sentinel.
 The normal redis instances will be switched off and disabled.

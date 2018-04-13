@@ -1,6 +1,6 @@
 {
   "name": "schlitzered-redis",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "Stephan Schultchen",
   "summary": "Manage Redis Sentinel, as well as multiple Redis Instances",
   "license": "MIT",
